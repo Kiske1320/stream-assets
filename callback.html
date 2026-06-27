@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head><title>Token</title></head>
+<body>
+<h1>Token recibido</h1>
+<p id="token"></p>
+<script>
+  const hash = window.location.hash;
+  const params = new URLSearchParams(hash.replace('#', '?'));
+  const token = params.get('access_token');
+  document.getElementById('token').textContent = token || 'No token. URL: ' + window.location.href;
+</script>
+</body>
+</html>
